@@ -10,7 +10,9 @@ Welcome to the **Learn ExecuTorch on Arm: Practical Labs Collection**! In these 
 2) **Efficient Image Classification Using ExecuTorch on Raspberry Pi** - CPU Inference on Raspberry Pi 5 (Arm-powered) - MobileNetV2 CNN, Quantization, and Example Application
 - Can be completed on Raspberry Pi + PiCamera, or Arm-powered MacBook if not completing PiCamera section
 
-3) **Deploying Edge AI on Ethos-U Neural Processing Units with TOSA and Fixed Virtual Platform** - NPU Inference on Ethos-U Fixed Virtual Platform (FVP) - TOSA, Google Model Explorer, Vela
+3) **Accelerating ExecuTorch on Arm Ethos-U Neural Processing Units** - NPU Inference on Ethos-U Fixed Virtual Platform (FVP) - Understanding TOSA, Google Model Explorer
+
+# More labs coming soon...
 
 ## Intended Audience
 
