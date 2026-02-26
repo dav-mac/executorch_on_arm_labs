@@ -2,7 +2,7 @@
 
 # Learn ExecuTorch on Arm: Practical Labs Collection
 
-Welcome to the **Learn ExecuTorch on Arm: Practical Labs Collection**! In these hands-on sessions, you will explore how PyTorch models can be exported and lowered to the ExecuTorch Runtime for more effective, lightweight, minimalist inference at the Edge. This will cover deploying to CPUs, particularly via the XNNPACK backend, for transformer-based and CNN models, before covering deployment to other hardware backends, such as the Arm Ethos-U Neural Processing Unit (NPU). This is **NOT** a substitute for [official documentation](https://docs.pytorch.org/executorch/stable/index.html), but provides an accessible no-nonsense entry point to learn more about ExecuTorch and get started quickly with limited background in Edge AI.
+Welcome to the **Learn ExecuTorch on Arm: Practical Labs Collection**! In these hands-on sessions, you will explore how PyTorch models can be exported and lowered to the ExecuTorch Runtime for more effective, lightweight, minimalist inference at the Edge. This will cover deploying to CPUs, particularly via the XNNPACK backend, for transformer-based and CNN models, before covering deployment to other hardware backends, such as the Arm Ethos-U Neural Processing Unit (NPU). This is **NOT** a substitute for [official documentation](https://docs.pytorch.org/executorch/stable/index.html), but provides an accessible, supplementary entry point to learn more about ExecuTorch and get started quickly with limited background in Edge AI, providing theoretical understanding and practical implementation skills.
 
 1) **Edge AI Inference on Arm using the ExecuTorch Runtime + XNNPACK and Kleidi AI** - CPU Inference on Raspberry Pi 5 (Arm-powered) - PyTorch vs ExecuTorch at the Edge for Transformer-based Models
 - Can be completed on Raspberry Pi, or Arm-powered MacBook
@@ -14,9 +14,9 @@ Welcome to the **Learn ExecuTorch on Arm: Practical Labs Collection**! In these 
 
 # More labs coming soon...
 
-## Intended Audience
+## Intended Audiences
 
-This Lab is designed for industry ML engineers with no ExecuTorch experience, who want to understand how & why to deploy AI inference applications at the Edge using the ExecuTorch runtime. It is also well-suited for Embedded Engineers with a basic fundamentals AI/ML knowledge, interested in incorporating ML in their Embedded/Edge applications. Students wanting to learn more will also find this accessible and useful.
+This Lab is designed for industry ML engineers with no-to-low ExecuTorch experience, who want to understand how & why to deploy AI inference applications at the Edge using the ExecuTorch runtime. It is also well-suited for Embedded Engineers with a basic fundamentals AI/ML knowledge, interested in incorporating ML in their Embedded/Edge applications. Students wanting to learn more will also find this accessible and useful, and academics, teachers, and trainers are encouraged to incorporate these resources into their teaching, for free, subject to the attached EULA in `LICENSE.md`.
 
 Those who want to build or refresh fundamentals can first complete introductory and intermediate material such as the [Intro to AI](https://www.edx.org/learn/computer-science/arm-education-introduction-to-ai) or [Optimizing Generative AI on Arm](https://www.edx.org/learn/computer-science/arm-education-ai-on-arm) course.
 
@@ -24,11 +24,7 @@ Those who want to build or refresh fundamentals can first complete introductory 
 
 ## Getting Started
 
-- Install required packages
-- Follow notebooks in sequence
-- Use as a foundation build your own applications 
-
-This lab collection provides both theoretical understanding and practical implementation skills for getting started with ExecuTorch.
+- Look at `Lab_0_Setup.md` and follow the steps before attempting the labs.
 
 ### Requirements
 
