@@ -50,5 +50,6 @@ To install the FVPs on Mac - follow these [instructions](https://github.com/Arm-
 ./install_executorch.sh
 ./examples/arm/setup.sh --i-agree-to-the-contained-eula
 ```
+Both scripts can take a while to install.
 
 You are now ready to start the Lab.
