@@ -18,7 +18,7 @@ You can launch a lab in VSCode with the Jupyter extension, or from the terminal 
 jupyter lab Lab_1_Transformer_Inference_ExecuTorch.ipynb
 ```
 
-This will launch a a browser window.
+This will launch a a browser window. You are now ready to start the Lab.
 
 ## **Lab 2**
 
@@ -26,16 +26,29 @@ Lab 1 should ideally be completed on a Raspberry Pi 5/4 with a PiCamera. Without
 
 It is recommended that you utilise the `CPU_lab_venv` created for Lab 1, and you can launch using the same method as in Lab 1.
 
+You are now ready to start the Lab.
+
 ## **Lab 3**
 
 Lab 3 involves running ahead-of-time compilation on a CPU, but deploying to a Corstone 320 Fixed Virtual Platform (FVP). This is a simulation, running on your CPU, but simulating a Cortex-M85 microcontroller-class CPU connected in a heterogeneous system with an Ethos-U85 NPU.
 
+You are recommended to use a Linux aarch64 or x86 device/instance or an Arm-powered MacBook. Be aware that using the MacBook approach requires extra steps and can be less straightforward than spinning up a Linux instance. It is **NOT** recommended to use a Raspberry Pi as the FVP simulation will likely be too intensive.
+
 For this lab, you can use the `NPU_lab_venv` created by the `learn_executorch_on_arm_setup.sh` script. Before launching the lab, you must perform several further steps.
 
-- FVP install, Mac and Linux
+1. On your terminal in the base directory of this repo, activate the venv and navigate to the provided `executorch` folder.
+```bash
+pyenv activate NPU_lab_venv
+cd NPU_Lab_ExecuTorch/executorch
+```
+2. If on Mac you must install FVPs, otherwise skip to 3 (Linux machines will install FVPs as part of the next stage, but for a Mac they must be pre-installed)
+To install the FVPs on Mac - follow these [instructions](https://github.com/Arm-Examples/FVPs-on-Mac) carefully.
 
-- Clone executorch and esnure location correct and does not interfere with other labs
+3. From in the terminal inside the `executorch` directory, run the following two scripts:
 
-- install_executorch.sh
+```bash
+./install_executorch.sh
+./examples/arm/setup.sh --i-agree-to-the-contained-eula
+```
 
-- setup.sh --i-agree-to-the-contained-eula
+You are now ready to start the Lab.
