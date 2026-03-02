@@ -18,7 +18,21 @@ You can launch a lab in VSCode with the Jupyter extension, or from the terminal 
 jupyter lab Lab_1_Transformer_Inference_ExecuTorch.ipynb
 ```
 
-This will launch a a browser window. You are now ready to start the Lab.
+This will launch a a browser window. 
+
+This lab uses models from HuggingFace. If you do not already have an account, it is free to create one [here](https://huggingface.co/join).
+You must create an access token [here](https://huggingface.co/settings/tokens). Click `New token`, name it, and then click `Generate token`. Copy your token to a safe place e.g., notes.
+
+Inside your terminal, activate your venv and authenticate your HF token:
+
+```bash
+source ./CPU_lab_venv/bin/activate
+hf auth login
+```
+
+Enter your token when prompted.
+
+You are now ready to start the Lab.
 
 ## **Lab 2**
 

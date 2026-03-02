@@ -143,6 +143,7 @@ create_venv_and_kernel() {
   echo "   Installing / upgrading pip + ipykernel in ${venv_name}..."
   "${venv_python}" -m pip install -U pip setuptools wheel
   "${venv_python}" -m pip install -U ipykernel jupyter
+  "${venv_python}" -m pip install -U huggingface_hub
 
   echo "   Registering Jupyter kernel: ${display_name} (${kernel_name})"
   # This is idempotent: re-running updates the kernel spec.
