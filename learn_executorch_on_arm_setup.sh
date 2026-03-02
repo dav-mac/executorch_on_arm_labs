@@ -20,6 +20,106 @@ OS="$(uname -s)"
 echo "Detected OS: ${OS}"
 echo
 
+have_cmd() { command -v "$1" >/dev/null 2>&1; }
+
+SUDO=""
+if have_cmd sudo; then SUDO="sudo"; fi
+
+ram_mb() {
+  # Linux: MemTotal in kB. macOS: sysctl bytes.
+  if [ "$(uname -s)" = "Linux" ]; then
+    awk '/MemTotal/ {print int($2/1024)}' /proc/meminfo
+  else
+    # bytes -> MB
+    python3 - <<'PY' 2>/dev/null || echo 8192
+import os, subprocess
+out = subprocess.check_output(["sysctl","-n","hw.memsize"]).decode().strip()
+print(int(int(out)/(1024*1024)))
+PY
+  fi
+}
+
+ensure_tmpdir() {
+  # Avoid tiny/tmpfs /tmp on Pi; build in $HOME
+  export TMPDIR="${HOME}/pyenv-tmp"
+  mkdir -p "$TMPDIR"
+}
+
+ensure_linux_swap_if_low_ram() {
+  # Only for Linux. Helps a LOT for pyenv builds on small RAM.
+  [ "$(uname -s)" = "Linux" ] || return 0
+
+  local mb
+  mb="$(ram_mb)"
+  echo "Detected RAM: ${mb} MB"
+
+  # If < 3500MB, we’ll add a swapfile if none exists / swap is tiny.
+  if [ "${mb}" -lt 3500 ]; then
+    echo "Low-RAM Linux detected; ensuring swap for pyenv build..."
+
+    # If already has swap, don't fight it—just report.
+    if [ -r /proc/swaps ] && awk 'NR>1 {found=1} END{exit !found}' /proc/swaps; then
+      echo "Swap already configured:"
+      cat /proc/swaps || true
+      return 0
+    fi
+
+    # Try dphys-swapfile first (common on Raspberry Pi OS)
+    if have_cmd dphys-swapfile; then
+      echo "Using dphys-swapfile to enable swap (4096MB)..."
+      $SUDO dphys-swapfile swapoff || true
+      $SUDO sed -i 's/^CONF_SWAPSIZE=.*/CONF_SWAPSIZE=4096/' /etc/dphys-swapfile
+      $SUDO dphys-swapfile setup
+      $SUDO dphys-swapfile swapon
+      return 0
+    fi
+
+    # Fallback: create a swapfile
+    echo "Creating /swapfile (4096MB)..."
+    $SUDO fallocate -l 4G /swapfile 2>/dev/null || $SUDO dd if=/dev/zero of=/swapfile bs=1M count=4096
+    $SUDO chmod 600 /swapfile
+    $SUDO mkswap /swapfile
+    $SUDO swapon /swapfile
+    echo "/swapfile none swap sw 0 0" | $SUDO tee -a /etc/fstab >/dev/null || true
+  fi
+}
+
+pyenv_install_with_diagnostics() {
+  local version="$1"
+
+  ensure_tmpdir
+  ensure_linux_swap_if_low_ram
+
+  # Conservative defaults; safe everywhere.
+  export MAKEOPTS="-j1"
+  export PYTHON_BUILD_MAKE_OPTS="-j1"
+  export PYTHON_BUILD_MAX_JOBS=1
+
+  echo "Diagnostics:"
+  echo "  Arch: $(uname -m)"
+  echo "  TMPDIR: ${TMPDIR}"
+  if have_cmd free; then free -h || true; fi
+  df -h . "${TMPDIR}" /tmp 2>/dev/null || true
+
+  echo
+  echo "3) Installing Python ${version} (pyenv)..."
+  if ! pyenv install -s "${version}"; then
+    echo
+    echo "pyenv install failed. Showing latest python-build log tail:"
+    local log
+    log="$(ls -t /tmp/python-build.*.log 2>/dev/null | head -n 1 || true)"
+    if [ -n "${log}" ]; then
+      echo "---- ${log} (tail -n 160) ----"
+      tail -n 160 "${log}" || true
+    else
+      echo "No /tmp/python-build.*.log found."
+    fi
+    return 1
+  fi
+
+  pyenv rehash
+}
+
 install_deps_macos() {
   echo "1) Installing build dependencies (macOS)..."
 
