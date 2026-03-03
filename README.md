@@ -27,6 +27,7 @@ Those who want to build or refresh fundamentals can first complete introductory 
 
 ## Getting Started
 
+- Clone the repo with `git clone https://github.com/arm-university/learn_executorch_on_arm.git`
 - Look at `Lab_0_Setup.md` and follow the steps before attempting the labs.
 
 ## Interested in Contributing?
