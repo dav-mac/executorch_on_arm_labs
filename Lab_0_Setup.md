@@ -36,7 +36,7 @@ You are now ready to start the Lab.
 
 ## **Lab 2**
 
-Lab 1 should ideally be completed on a Raspberry Pi 4 or 5 with a PiCamera. Without a PiCamera, 90% of the lab can still be completed. You can also use similar Arm-based edge devices running Linux, or an Arm-based Mac - however more powerful devices such as a Mac may show inverse performance results when comparing PyTorch and ExecuTorch. We perform both ahead-of-time (AOT) compilation and inference on the CPU of the hardware used.
+Lab 1 should ideally be completed on a Raspberry Pi 4 or 5 with a PiCamera. Without a PiCamera, 90% of the lab can still be completed. You can also use similar Arm-based edge devices running Linux, or an Arm-based Mac, however more powerful devices such as a Mac may show inverse performance results when comparing PyTorch and ExecuTorch. We perform both ahead-of-time (AOT) compilation and inference on the CPU of the hardware used.
 
 It is recommended that you utilize the `CPU_lab_venv` created for Lab 1, and you can launch using the same method as in Lab 1.
 
