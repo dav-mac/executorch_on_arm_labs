@@ -54,7 +54,8 @@ Those who want to build or refresh fundamentals can first complete introductory 
 We would welcome labs for this repository that are contributed from the community - check out `CONTRIBUTING.md`.
 
 ## Special thanks
-**✍️ Contributors:** Lab 2 was produced from original content contributed by [Professor Marcelo Rovai](https://github.com/Mjrovai) at UNIFEI University, in collaboration with Matt Cossins from Arm.
+**✍️ Contributors:**
+- Lab 2 was produced from original content contributed by [Professor Marcelo Rovai](https://github.com/Mjrovai) at UNIFEI University, in collaboration with Matt Cossins from Arm.
 
 ## License
 You are free to fork or clone this material. See `LICENSE.md` for the complete license.
