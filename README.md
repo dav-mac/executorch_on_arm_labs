@@ -1,19 +1,31 @@
-# 🚀 **Get Practical with ExecuTorch on Arm Labs** 🚀
+# 🚀 **ExecuTorch on Arm Practical Labs** 🚀
 
 ![learn_on_arm](./img/Learn%20on%20Arm_banner.png)
 
 ## Course overview
-Welcome to the **ExecuTorch on Arm Practical Labs**! In these hands-on sessions, you will explore how PyTorch models can be exported and lowered to the ExecuTorch runtime for more effective, lightweight, minimalist inference at the Edge. This will cover deploying to CPUs, particularly via the XNNPACK backend, for transformer-based and CNN models, before covering deployment to other hardware backends, such as the Arm Ethos-U Neural Processing Unit (NPU), understanding the TOSA IR, use of Fixed Virtual Platforms, and use of tools such as Google's Model Explorer. This is **NOT** a substitute for [official documentation](https://docs.pytorch.org/executorch/stable/index.html), but provides an accessible entry point for those wanting to learn more about ExecuTorch. Combining theoretical understanding and practical implementation skills, these labs allow participants to get started building and deploying quickly, even for those with a limited background in Edge AI.
+Welcome to the **ExecuTorch on Arm Practical Labs**, a series of hands-on sessions providing an accessible entry point for those wanting to learn more about ExecuTorch. Combining theoretical understanding and practical implementation skills, these labs allow participants to get started building and deploying quickly, even for those with a limited background in Edge AI. You will explore how PyTorch models can be exported and lowered to the ExecuTorch runtime for more effective, lightweight, minimalist inference at the Edge.
+- Note: This is **NOT** a substitute for the [official documentation](https://docs.pytorch.org/executorch/stable/index.html) on pytorch.org
 
 ## Who is this for?
 - These labs are designed for industry ML engineers with little or no ExecuTorch experience who want to understand how and why to deploy AI inference applications at the Edge using the ExecuTorch runtime. 
 - They are also well suited for embedded engineers with basic AI and/or ML knowledge, who are interested in incorporating ML in their embedded and edge applications.
 - Students who want to learn more will also find this accessible and useful. Academics, teachers, and trainers are encouraged to incorporate these resources into their teaching for free, subject to the attached EULA in `LICENSE.md`.
 
-Those who want to build or refresh fundamentals can first complete introductory and intermediate material such as the [Intro to AI](https://www.edx.org/learn/computer-science/arm-education-introduction-to-ai) or [Optimizing Generative AI on Arm](https://www.edx.org/learn/computer-science/arm-education-ai-on-arm) course.
+Those who want to build or refresh fundamentals can first complete introductory and intermediate material such as Arm's [Intro to AI](https://www.edx.org/learn/computer-science/arm-education-introduction-to-ai) or [Optimizing Generative AI on Arm](https://www.edx.org/learn/computer-science/arm-education-ai-on-arm) courses.
 
 ## What will you learn?
-...
+By completing these labs, you will be able to:
+
+- Export and convert PyTorch models to the ExecuTorch runtime for efficient edge inference
+- Run and benchmark transformer and CNN models on Arm CPUs using the XNNPACK backend
+- Understand the trade-offs between PyTorch and ExecuTorch for edge deployment
+- Apply model optimization techniques such as quantization for performance and efficiency
+- Build and run real-world edge AI applications (e.g. image classification on Raspberry Pi)
+- Deploy models to Arm Ethos-U NPUs using Fixed Virtual Platforms (FVPs)
+- Understand the role of TOSA (Tensor Operator Set Architecture) in model lowering and portability
+- Use tools such as Google Model Explorer to inspect and analyze model graphs
+- Gain practical experience deploying across CPU and NPU backends in a consistent workflow
+
 ## Prerequisites
 ### Knowledge and skills
 ...
