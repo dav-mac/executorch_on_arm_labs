@@ -40,7 +40,7 @@ Those who want to build or refresh fundamentals can first complete introductory 
 
 > **New to this course? Follow these steps:**
 >
-> - Clone the repo with `git clone https://github.com/arm-education/learn_executorch_on_arm.git`
+> - Clone the repo with `git clone https://github.com/arm-education/executorch_on_arm_labs.git`
 > - Follow the setup guide [`Lab_0_Setup.md`](https://github.com/dav-mac/executorch_on_arm_labs/blob/main/Lab_0_Setup.md) before attempting the labs.
 
 
